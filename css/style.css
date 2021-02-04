@@ -1,0 +1,1019 @@
+@font-face {
+    font-family: 'Bebas Neue Bold';
+    src: url('../fonts/BebasNeueBold.eot');
+    src: url('../BebasNeueBold.eot@#iefix') format('embedded-opentype'),
+    url('../fonts/BebasNeueBold.woff2') format('woff2'),
+    url('../fonts/BebasNeueBold.woff') format('woff'),
+    url('../fonts/BebasNeueBold.ttf') format('truetype'),
+    url('../fonts/BebasNeueBold.svg#BebasNeueBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold.eot');
+    src: url('../Roboto-Bold.eot@#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Bold.woff2') format('woff2'),
+    url('../fonts/Roboto-Bold.woff') format('woff'),
+    url('../fonts/Roboto-Bold.ttf') format('truetype'),
+    url('../fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton Black';
+    src: url('../fonts/Panton-Black.eot');
+    src: url('../Panton-Black.eot@#iefix') format('embedded-opentype'),
+    url('../fonts/Panton-Black.woff2') format('woff2'),
+    url('../fonts/Panton-Black.woff') format('woff'),
+    url('../fonts/Panton-Black.ttf') format('truetype'),
+    url('../fonts/Panton-Black.svg#Panton-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton Regular';
+    src: url('../fonts/Panton-Regular.eot');
+    src: url('../Panton-Regular.eot@#iefix') format('embedded-opentype'),
+    url('../fonts/Panton-Regular.woff2') format('woff2'),
+    url('../fonts/Panton-Regular.woff') format('woff'),
+    url('../fonts/Panton-Regular.ttf') format('truetype'),
+    url('../fonts/Panton-Regular.svg#Panton-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton Italic';
+    src: url('../fonts/Panton-Italic.eot');
+    src: url('../Panton-Italic.eot@#iefix') format('embedded-opentype'),
+    url('../fonts/Panton-Italic.woff2') format('woff2'),
+    url('../fonts/Panton-Italic.woff') format('woff'),
+    url('../fonts/Panton-Italic.ttf') format('truetype'),
+    url('../fonts/Panton-Italic.svg#Panton-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton Bold';
+    src: url('../fonts/Panton-Bold.eot');
+    src: url('../Panton-Bold.eot@#iefix') format('embedded-opentype'),
+    url('../fonts/Panton-Bold.woff2') format('woff2'),
+    url('../fonts/Panton-Bold.woff') format('woff'),
+    url('../fonts/Panton-Bold.ttf') format('truetype'),
+    url('../fonts/Panton-Bold.svg#Panton-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+body {
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: -moz-radial-gradient(50% 50%, circle closest-side, rgb(255, 255, 255) 0%, rgb(239, 239, 239) 100%);
+    background-image: -webkit-radial-gradient(50% 50%, circle closest-side, rgb(255, 255, 255) 0%, rgb(239, 239, 239) 100%);
+    background-image: -ms-radial-gradient(50% 50%, circle closest-side, rgb(255, 255, 255) 0%, rgb(239, 239, 239) 100%);
+}
+
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    font-weight: 400;
+}
+
+input[type="email"], input[type="submit"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+
+}
+
+input::placeholder {
+    color: #666;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0;
+
+}
+
+b, strong {
+    font-family: 'Roboto Bold', sans-serif;
+    font-weight: normal
+}
+
+.button {
+    font-family: 'Bebas Neue Bold';
+    font-size: 28px;
+    line-height: 60px;
+    color: #fff;
+    text-align: center;
+    border: none;
+    outline: none;
+    display: inline-block;
+    padding: 0px 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #ff6d29;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 10px #c6511a;
+    text-decoration: none;
+    width: 270px;
+    vertical-align: middle
+}
+
+.button:hover {
+    background-color: #2ea980;
+    box-shadow: 0 10px #0a3e27;
+    color: #fff;
+    text-decoration: none
+}
+
+.button:active {
+    background-color: #2ea980;
+    color: #fff;
+    box-shadow: 0 5px #0a3e27;
+    transform: translateY(5px);
+}
+
+.button i {
+    font-size: 40px;
+    line-height: 60px;
+    vertical-align: top
+}
+
+header {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #fff
+}
+
+header .container {
+    width: 320px;
+}
+
+header h1 {
+    font-family: 'Bebas Neue Bold';
+    font-size: 19px;
+    line-height: 22px;
+    color: #ff6d29;
+    text-align: center
+}
+
+section, footer {
+    padding: 20px 0;
+    margin: 0;
+}
+
+header .idealica {
+    background: url("../images/header2.jpg") no-repeat center top #ececec;
+    height: 394px;
+}
+
+@media (min-width: 576px) {
+    header .idealica {
+        width: 140%;
+        margin-left: -20%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+}
+
+header .logo_img {
+    margin-top: 0px;
+    padding-top: 15px;
+    margin-bottom: 15px
+}
+
+header .logo_text {
+    font: normal 19px/26px "Panton Bold";
+    color: #069460;
+    padding: 10px 15px;
+    height: 36px
+}
+
+header .logo_text span {
+    display: block;
+    width: 100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+header .logo_text span:before {
+    width: 18px;
+    content: " ";
+    background-image: url(../images/badge.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -20px;
+    top: 3px;
+    height: 17px;
+}
+
+.pnorm .oldPriceAndLabelForLandingInfoApi {
+    font-size: 35px;
+}
+
+
+.clearfix {
+    min-height: 1px;
+    display: block;
+    position: relative;
+    clear: both
+}
+
+.order-1 {
+    background: url("../images/water.png") no-repeat center top #fff;
+}
+
+.order-1 h2 {
+    font-family: "Roboto Bold";
+    color: #ff6d29;
+    font-size: 30px
+}
+
+.order-1 .fruits {
+    margin-top: -80px;
+    height: 125px;
+    margin-bottom: -30px
+}
+
+.order-1 .fruits img {
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 0 auto
+}
+
+.order-1 .bullet-table {
+    width: 220px;
+    display: table;
+    margin: 0 auto
+}
+
+.order-1 .bullet {
+    display: table;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    padding: 0 10px 0 0px;
+}
+
+.order-1 .bullet i {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 22px;
+    color: #2ea980;
+    padding: 5px 5px 5px 2px;
+}
+
+.order-1 .bullet .product__list-item {
+    display: table;
+    vertical-align: middle;
+    min-height: 32px;
+}
+
+.order-1 .bullet .product__list-item h3 {
+    display: table-cell;
+    vertical-align: middle;
+    color: #2ea980;
+    font-family: "Roboto Bold";
+    font-size: 25px;
+    line-height: 30px;
+    text-align: left
+}
+
+.order-1 .button {
+    margin: 15px auto 23px;
+    width: 250px
+}
+
+.order-1 .container {
+    max-width: 320px;
+}
+
+.order-1 p.discount {
+    font-family: "Roboto Bold";
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: #069460;
+    margin-bottom: 0
+}
+
+.order-1 p.discount .oldPriceAndLabelForLandingInfoApi {
+    font-family: "Roboto Bold";
+    color: #616161
+}
+
+.order-1 p.provate {
+    font-family: "Roboto Bold";
+    color: #363636;
+    font-size: 19px;
+    line-height: 22px;
+    margin: 10px auto
+}
+
+.green {
+    background: url("../images/secgr.jpg") no-repeat center 100% #0a3e27
+}
+
+.green .col-12 {
+    padding: 0;
+}
+
+.green h2 {
+    font-family: 'Bebas Neue Bold';
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 20px;
+    color: #d51b77
+}
+
+.green-table {
+    display: table;
+    min-width: 320px;
+    position: relative;
+    margin: 0px auto;
+}
+
+.jcover {
+    display: table-cell;
+    width: 169px;
+    margin-right: 10px;
+    vertical-align: top;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.jtext {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Bebas Neue Bold';
+    font-size: 26px;
+    color: #fff;
+    line-height: 24px;
+    text-align: left
+}
+
+.green .row .col-12:nth-child(2) .jtext, .green .row .col-12:nth-child(4) .jtext {
+    text-align: right
+}
+
+@media (min-width: 576px) {
+    .green-table, .jcover {
+        width: auto;
+        min-width: 0
+    }
+
+    .green .col-12 {
+        padding: 0 15px;
+    }
+
+    .jcover, .jcover img {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        position: relative;
+        text-align: center
+    }
+
+    .jtext {
+        margin-bottom: 0px;
+    }
+
+    .jcover, .jtext {
+        display: block;
+    }
+
+    .green .row .col-12 .jtext {
+        text-align: center !important
+    }
+
+    .green .row .col-12:nth-child(2) .jtext, .green .row .col-12:nth-child(4) .jtext {
+        padding-top: 7px
+    }
+}
+
+.green .fruits-2 {
+    background: url("../images/fruits-2.png") no-repeat center 100%;
+    margin-top: -110px;
+    height: 514px;
+    margin-bottom: -395px
+}
+
+@media (min-width: 576px) {
+    .green {
+        padding: 50px 0 100px
+    }
+
+    .green .container {
+        padding-top: 10px
+    }
+
+    .green .fruits-2 {
+        margin-top: -130px;
+        margin-bottom: -365px
+    }
+
+    .green .row .col-12:nth-child(1) .jcover img, .green .row .col-12:nth-child(3) .jcover img {
+        margin-top: 30px;
+        margin-bottom: 10px
+    }
+
+    .green .row .col-12:nth-child(2) .jcover img, .green .row .col-12:nth-child(4) .jcover img {
+        margin-bottom: 30px;
+        margin-top: 10px
+    }
+}
+
+.doctor {
+    background: url("../images/doctor.jpg") no-repeat center center #fff;
+    background-size: cover;
+    padding: 20px 0 50px
+}
+
+.doctor h2 {
+    font-family: "Roboto Bold";
+    font-size: 20px;
+    color: #021c36;
+}
+
+.doctor .doctor_img img {
+    border-radius: 50%;
+    -moz-box-shadow: 3px 10px 20px 5px rgba(168, 191, 196, .64);
+    -webkit-box-shadow: 3px 10px 20px 5px rgba(168, 191, 196, .64);
+    box-shadow: 3px 10px 20px 5px rgba(168, 191, 196, .64);
+    margin-bottom: 20px;
+    margin-top: 10px
+}
+
+.doctor p {
+    color: #1a1a1a;
+    font-size: 14px;
+    margin-bottom: 0
+}
+
+.doctor p.doc-name {
+    font-family: "Roboto Bold";
+    color: #1a1a1a;
+    font-size: 14px;
+    margin-bottom: 10px
+}
+
+.order-2 .fruits-3 {
+    background: url("../images/fruits-3.png") no-repeat center 100%;
+    margin-top: -50px;
+    height: 86px;
+    margin-bottom: -36px;
+    opacity: 1
+}
+
+
+.order-2 {
+    padding: 0;
+    margin-bottom: 851px
+}
+
+.order-2 .container-fluid.water {
+    position: absolute;
+    margin-top: -50px;
+    height: 951px;
+    background: url("../images/order-2-water.png") no-repeat center top;
+    padding: 20px 0
+}
+
+.order-2 .container {
+    padding-top: 50px
+}
+
+.order-2 h1 {
+    font-family: 'Bebas Neue Bold';
+    text-transform: uppercase;
+    color: #0b9770;
+    margin-bottom: 20px;
+    font-size: 30px
+}
+
+.order-2 h3 {
+    font-family: "Panton Bold";
+    font-size: 21px;
+    line-height: 24px;
+    color: #ff6d29;
+    margin-bottom: 5px;
+    text-align: inherit
+}
+
+.order-2 .order-2-table {
+    display: table;
+    max-width: 320px;
+    float: none;
+    margin: 0 auto 40px
+}
+
+.order-2 .order-2-table p {
+    font-family: "Panton Regular";
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+    margin-bottom: 10px
+}
+
+.order-2 .circle-cell {
+    display: table-cell;
+    min-height: 145px;
+    margin-right: 10px;
+    vertical-align: top;
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+
+.order-2 .row .order-2-table .circle {
+    height: 214px;
+    margin: 0 auto;
+}
+
+.order-2 .row.row-1 .order-2-table .circle {
+    width: 134px;
+}
+
+.order-2 .row.row-2 .order-2-table .circle {
+    width: 94px;
+}
+
+.order-2 .row.row-3 .order-2-table .circle {
+    width: 104px;
+}
+
+.order-2 .row.row-3 .order-2-table .circle img {
+    padding-left: 35px
+}
+
+
+.order-2 .row.row-1 .circle:before {
+    width: 67px;
+    content: " ";
+    background-image: url(../images/arrow-1.png);
+    position: absolute;
+    left: 130px;
+    top: 170px;
+    height: 59px;
+}
+
+.order-2 .row:nth-child(3) .circle:before {
+    width: 67px;
+    content: " ";
+    background-image: url(../images/arrow-2.png);
+    position: absolute;
+    left: 126px;
+    top: 156px;
+    height: 59px;
+}
+
+.order-2 .row .order-2-table .ctext {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 0;
+    font-family: 'Panton Regular';
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.order-2 .row.row-1 .order-2-table .ctext {
+    text-align: right;
+    width: 144px
+}
+
+.order-2 .row.row-2 .order-2-table .ctext {
+    text-align: left;
+    width: 200px;
+    padding-left: 15px
+}
+
+.order-2 .row.row-2 .order-2-table {
+    margin-top: -60px
+}
+
+.order-2 .row.row-3 .order-2-table .ctext {
+    text-align: right;
+    width: 174px;
+    padding-top: 60px
+}
+
+.order-2 .row.row-3 .order-2-table {
+    margin-top: -80px;
+}
+
+.order-2 .button {
+    margin-top: -30px;
+    margin-bottom: 30px
+}
+
+.order-2 p.ottenere {
+    font-family: "Panton Regular";
+    font-size: 15px;
+    color: #6b6b6b
+}
+
+.components .fruits-4 {
+    background: url("../images/fruits-4.png") no-repeat center 100%;
+    height: 110px;
+    margin-top: -75px;
+    margin-bottom: -50px
+}
+
+
+@media (min-width: 576px) {
+    .hidden-sm {
+        display: none
+    }
+
+    .components .fruits-4 img {
+        position: absolute;
+    }
+}
+
+.order-2 .container {
+    max-width: 480px
+}
+
+.effective {
+    background-image: -moz-radial-gradient(50% 50%, circle closest-side, rgb(255, 255, 255) 0%, rgb(225, 237, 239) 100%);
+    background-image: -webkit-radial-gradient(50% 50%, circle closest-side, rgb(255, 255, 255) 0%, rgb(225, 237, 239) 100%);
+    background-image: -ms-radial-gradient(50% 50%, circle closest-side, rgb(255, 255, 255) 0%, rgb(225, 237, 239) 100%);
+    padding: 0
+}
+
+.effective .container {
+    max-width: 320px
+}
+
+.effective .fruits-5 {
+    background: url("../images/fruits-5.png") no-repeat center bottom;
+    padding: 20px 0 0;
+}
+
+.effective .fruits-6 {
+    background: url("../images/fruits-6.png") no-repeat center top;
+    height: 94px;
+    margin-top: -65px;
+    margin-bottom: -20px
+}
+
+.effective h2 {
+    font-family: "Bebas Neue Bold";
+    font-size: 32px;
+    line-height: 34px;
+    color: #ff7941;
+    margin-bottom: 20px
+}
+
+.effective h3 {
+    font-family: "Panton Regular";
+    font-size: 20px;
+    color: #000;
+}
+
+.effective .row .col-12 {
+    display: table;
+    margin-bottom: 30px
+}
+
+.effective .imgwn {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle
+}
+
+.effective .imgtxt {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 10px
+}
+
+@media (min-width: 576px) {
+    .effective h3 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+.components {
+    background: url("../images/components.jpg") no-repeat center top #2aa352;
+    padding: 40px 0 30px
+}
+
+.components .container {
+    max-width: 320px
+}
+
+.components h2 {
+    font-family: "Bebas Neue Bold";
+    font-size: 30px;
+    line-height: 34px;
+    color: #fff;
+    text-transform: uppercase
+}
+
+.components h4 {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Panton Black";
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase
+}
+
+.components img {
+    margin: 15px auto 5px;
+}
+
+.components p {
+    font-family: "Panton Regular";
+    font-size: 18px;
+    line-height: 18px;
+    color: #fff;
+    padding: 0 10px;
+    color: #fff;
+}
+
+
+.reviews {
+    background: #2aa352;
+    padding: 20px 0 1px;
+    font-size: 14px
+}
+
+.reviews .fruits-7 {
+    background: url("../images/fruits-7.png") no-repeat center top;
+    height: 74px;
+    margin-top: -65px;
+    margin-bottom: 0px
+}
+
+.reviews h2 {
+    font-family: "Bebas Neue Bold";
+    font-size: 27px;
+    line-height: 32px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px
+}
+
+.reviews span.user_name {
+    font-family: "Roboto Bold";
+    font-size: 15px;
+    line-height: 19px;
+    color: #3280c9;
+    margin-bottom: 15px;
+    display: block;
+    float: none;
+}
+
+.reviews span.user_name img {
+    margin-right: 5px;
+    border-radius: 50%;
+    float: left;
+    margin-top: 4px
+}
+
+.reviews .review {
+    background: #fff;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+}
+
+.reviews .review p {
+    font-family: "Panton Regular";
+    font-size: 14px;
+    line-height: 18px
+}
+
+
+.certificato {
+    background: url("../images/certificato-bg.png") no-repeat center center #fff;
+    background-size: cover
+}
+
+.certificato h2 {
+    font-family: "Bebas Neue Bold";
+    color: #ff1d2d;
+    font-size: 42px;
+}
+
+.certificato img {
+    display: block;
+    position: relative;
+    margin: 20px auto;
+    max-width: 100%
+}
+
+.certificato p {
+    font-family: "Panton Regular";
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+@media (min-width: 576px) {
+    .certificato .text, .certificato img {
+        margin: 20px auto 5px
+    }
+}
+
+
+.cheerlead {
+    padding: 0;
+    background: url("../images/order-3.png") no-repeat center bottom #fff
+}
+
+.cheerlead h1 {
+    font-family: 'Bebas Neue Bold';
+    text-transform: uppercase;
+    color: #369c56;
+    margin-bottom: 13px;
+    font-size: 36px;
+    padding-top: 20px;
+}
+
+.cheerlead .container {
+    width: 320px;
+    padding-bottom: 20px
+}
+
+.cheerlead .container-fluid.fruits-8 {
+    position: absolute;
+    margin-top: -50px;
+    height: 386px;
+    background: url("../images/fruits-8.png") no-repeat center top;
+    padding: 20px 0
+}
+
+.cheerlead .bullet {
+    display: table;
+    width: 180px;
+    background: rgba(255, 121, 65, .9);
+    position: relative;
+    margin-bottom: 7px;
+    height: 57px;
+    vertical-align: middle;
+    padding: 5px 10px 5px 10px
+}
+
+.cheerlead .product__list-item h3 {
+    display: table-cell;
+    height: 57px;
+    vertical-align: middle
+}
+
+.cheerlead .bullet h3 {
+    font-family: "Panton Bold";
+    font-size: 15px;
+}
+
+.cheerlead .puede {
+    font-family: "Panton Bold";
+    font-size: 18px;
+    color: #000;
+}
+
+.order-3 {
+    background: #369c56;
+    padding: 20px 0
+}
+
+.order-3 .fruits-9 {
+    background: url("../images/fruits-9.png") no-repeat center top;
+    height: 103px;
+    margin-top: -65px;
+    position: absolute;
+    margin-bottom: -40px
+}
+
+@media (min-width: 576px) {
+    .order-3 .fruits-9 {
+        margin-bottom: -20px
+    }
+}
+
+.order-3 h2 {
+    font-family: "Panton Bold";
+    font-size: 16px;
+    padding-top: 25px
+}
+
+.order-3 span {
+    display: block;
+    font-family: "Panton Bold";
+    text-align: center;
+    float: none;
+    position: relative;
+    margin: 0px auto 5px;
+    font-family: "Panton Bold";
+    font-size: 21px;
+    line-height: 25px;
+}
+
+.order-3 span b {
+    font-weight: normal;
+    font-family: "Panton Bold";
+    color: #fff600;
+    font-size: 35px
+}
+
+.pnorm {
+    color: #fff
+}
+
+.pofertado {
+    color: #fff600
+}
+
+.order-3 p.anon {
+    font-family: "Panton Bold";
+    font-size: 17px;
+    line-height: 21px;
+    color: #fff;
+    margin-top: 20px;
+    -webkit-margin-after: 0;
+}
+
+.oferta {
+    background-color: rgb(229, 61, 61);
+    padding: 5px 0;
+    margin: 20px auto;
+    -moz-transform: rotate(-2deg); /* Firefox */
+    -o-transform: rotate(-2deg); /* Opera */
+    -webkit-transform: rotate(-2deg); /* Safari y Chrome */
+    font-family: "Bebas Neue Bold";
+    font-size: 17px;
+    line-height: 18px;
+    color: #fff;
+}
+
+.oferta .persent {
+    display: block;
+    position: absolute;
+    height: 65px;
+    width: 42px;
+    background: url("../images/percent.png") no-repeat center top;
+    left: 50%;
+    margin-left: 80px;
+    margin-top: -53px
+}
+
+.order-3 input.input-3 {
+    display: block;
+    width: 280px;
+    outline: 0;
+    font-family: "Panton Italic";
+    font-size: 16px;
+    line-height: 53px;
+    color: #1f1f1f;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 0 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .20), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+}
+
+.order-3 input[type="submit"] {
+    font-size: 34px
+}
+
+footer {
+    background-color: #235a34;
+    color: #fff
+}
+
+footer a, footer a:hover {
+    color: #ffc44d;
+}

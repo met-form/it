@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+<script src="js/jquery.min.js"></script>
+
+    <script>
+    function set_validator_errors(){
+        orderValidator.errorTitle = 'Per favore correggere i seguenti errori'; 
+
+        orderValidator.errorNameField = 'Nome'; 
+        orderValidator.errorNameMess = 'Inserisci il tuo nome'; 
+        
+        orderValidator.errorPhoneField = 'Telefono per la comunicazione'; 
+        orderValidator.errorPhoneMess = 'Inserisci il numero di telefono corretto'; 
+        
+        orderValidator.errorAddress = 'Inserisci l\'indirizzo corretto'; 
+        orderValidator.errorRequired = 'campo obbligatorio'; 
+        orderValidator.errorMaxLength = 'carattere massimo {1} valido'; 
+        orderValidator.errorMinLength = 'carattere minimo valido {1}'; 
+        orderValidator.errorEmailField = 'E-mail';
+        orderValidator.errorEmail = 'Email specificata non valida';
+        }
+    </script>
+    
+<script>
+
+
+
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+</script><script src="js/form.validate.js"></script>
+<script src="js/form.incomplete.js"></script>
+<script src="js/main2.js"></script>
+
+
+
+
+    <title>MET FORM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <!-- Meta tag Keywords -->
+    <link rel="stylesheet" href="css/grid.css" type="text/css" media="all"> <!-- Style-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all"> <!-- Style-CSS -->
+    <link rel="stylesheet" href="css/font-awesome.css"><!--fontawesome-css-->
+
+    <link rel="shortcut icon" href="images/circle-3.png" type="image/x-icon">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .hide, .flag-dropdown {
+            display: none;
+        }
+
+        /* обязательно */
+        .error-box { /* CSS ошибки */
+            color: #fff;
+            background-color: #DE5042;
+            border-radius: 5px;
+            text-align: center;
+            width: 280px;
+            font-size: 13px;
+            line-height: 20px;
+            z-index: 100;
+            margin: 0 auto 10px
+        }
+    </style>
+	
+	  <!-- INTH_SNIPPET_TOP -->
+</head>
+<body>
+<header>
+
+
+    <div class="container-fluid idealica">
+        <div class="container-fluid">
+            <div class="logo_text text-center"><span>MET FORM</span></div>
+            <h1>Sbarazzatevi dei chili indesiderati<br>
+                in modo facile e veloce!</h1>
+        </div>
+    </div>
+</header>
+
+
+<section class="order-1">
+    <div class="container-fluid text-center">
+        <div class="fruits"><img src="images/fruits.png" alt=""></div>
+    </div>
+    <div class="container text-center">
+        <div class="bullet-table"><h2>Volete:</h2>
+            <div class="row">
+                <div class="col-12 bullet"><i class="fa fa-chevron-right"></i>
+                    <div class="product__list-item text-left"><h3>Più leggerezza?</h3></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 bullet"><i class="fa fa-chevron-right"></i>
+                    <div class="product__list-item text-left"><h3>Più attenzione?</h3></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 bullet"><i class="fa fa-chevron-right"></i>
+                    <div class="product__list-item text-left"><h3>Più complimenti?</h3></div>
+                </div>
+            </div>
+        </div>
+        <p class="provate">Provate MET FORM e cambiate la vostra vita! Solo oggi il prezzo per il trattamento completo
+            -
+            50%!</p>
+        <div class="clearfix"></div>
+        <p class="discount"><s class="oldPriceAndLabelForLandingInfoApi"><x-oldprice>78</x-oldprice> <x-currency>€</x-currency></s><br><b class="priceAndLabelForLandingInfoApi"><x-newprice>39</x-newprice> <x-currency>€</x-currency></b></p>
+        <a class="button" href="#forma"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;ORDINARE
+            MET FORM</a>
+    </div>
+</section>
+
+
+<section class="green">
+    <div class="container-fluid fruits-2"></div>
+    <div class="container">
+        <div class="row row-eq-height">
+            <div class="col-12 col-sm-3 text-center">
+                <div class="green-table">
+                    <div class="jcover"><img src="images/circle-1.png" alt=""></div>
+                    <h3 class="jtext">CONTIENE<br>FITOIRISINA<br>NATURALE</h3></div>
+            </div>
+            <div class="col-12 col-sm-3 text-center">
+                <div class="green-table"><h3 class="jtext"></h3>
+                    <div class="jcover"><img src="images/circle-2.png" alt=""></div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3 text-center">
+                <div class="green-table">
+                    <div class="jcover"><img src="images/circle-3.png" alt=""></div>
+                    <h3 class="jtext">Senza riduzione<br>del seno e<br>cedimenti<br>della pelle</h3></div>
+            </div>
+            <div class="col-12 col-sm-3 text-center">
+                <div class="green-table"><h3 class="jtext">Prodotto<br>certificato<br>in UE</h3>
+                    <div class="jcover"><img src="images/circle-4.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="order-2">
+    <div class="container-fluid fruits-3"></div>
+    <div class="container-fluid water">
+
+        <div class="container text-center"><h1 class="text-center">Come MET FORM cambierà<br>
+            il vostro corpo in 28 giorni?</h1>
+            <div class="row row-1">
+                <div class="col-12 col-sm-12 text-center order-2-table">
+                    <div class="circle-cell">
+                        <div class="circle"><img src="images/order-2-1.png" alt=""></div>
+                    </div>
+                    <div class="ctext"><h3>1-7 giorni</h3>
+                        <p>MET FORM comincia a<br>
+                            trasformare i tessuti<br>
+                            grassi "nocivi" (lipidi<br>
+                            bianchi) nei tessuti<br>
+                            «utili» (lipidi bruni),<br>
+                            riduce il volume e la<br>
+                            massa corporea.</p></div>
+                </div>
+            </div>
+            <div class="row row-2">
+                <div class="col-12 col-sm-12 text-center order-2-table">
+                    <div class="ctext"><h3>8-19 giorni</h3>
+                        <p>Perdita di peso<br>
+                            fino a 6-8 kg. Comincia<br>
+                            a formarsi una silhouette<br>
+                            armonica.</p></div>
+                    <div class="circle-cell">
+                        <div class="circle"><img src="images/order-2-2.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-3">
+                <div class="col-12 col-sm-12 text-center order-2-table">
+                    <div class="circle-cell">
+                        <div class="circle"><img src="images/order-2-3.png" alt=""></div>
+                    </div>
+                    <div class="ctext"><h3>20-28 giorni</h3>
+                        <p>Il corpo si purifica e si<br>
+                            ringiovanisce. Perdita di<br>
+                            peso fino a 12-14 kg.<br>
+                            il risultato si mantiene.</p></div>
+                </div>
+            </div>
+            <a class="button" href="#forma">OTTENERE UN CORPO IDEALE!</a>
+            <p class="ottenere">Garantiamo al 100% la privacy dei<br>
+                vostri dati personali</p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="components">
+    <div class="container-fluid fruits-4"></div>
+    <div class="container">
+        <h2 class="text-center">Perché MET FORM<br>è così efficace?</h2>
+        <div class="row">
+            <div class="col-12 text-center"><img src="images/eleganza-component-1.png" alt=""><h4> ESTRATTO DI
+                CORDYCEPS
+            </h4>
+                <p>Riduce l'appettito, accelera il metabolismo. Rafforza il sistema immunitario, migliora il
+                    benessere</p></div>
+            <div class="col-12 text-center"><img src="images/eleganza-component-2.png" alt=""><h4>ESTRATTI DI KIVANO,
+                CHERIMOLA E LONGAN</h4>
+                <p>Abbattono i grassi, riducono i livelli di di glucosio nel sangue. Ripristinano l'equilibrio idrico e
+                    ringiovaniscono l'organismo dall'interno.</p></div>
+            <div class="col-12 text-center"><img src="images/eleganza-components-3.png" alt=""><h4>ESTRATTO DI RAMBUTAN
+                (FITOIRISINA)
+            </h4>
+                <p>Lega e rimuove le cellule adipose dall'organismo, aiuta intensamente a perdere il peso. Impedisce
+                    d'ingrassare</p></div>
+            <div class="col-12 text-center"><img src="images/eleganza-components-4.png" alt=""><h4>ESTRATTI DI TÈ
+                VERDE, CAFFÈ VERDE, GINSENG
+            </h4>
+                <p>Potenti antiossidanti: rimuovono il liquido superfluo e tossine dall'organismo. Aiutano a recuperare
+                    le energie.</p></div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<section class="effective">
+    <div class="container-fluid fruits-5">
+        <div class="container-fluid fruits-6"></div>
+        <div class="container">
+            <h2 class="text-center">Diventare un ideale é
+                facile!</h2>
+            <div class="row row-eq-height">
+                <div class="col-12 col-sm-12 text-center">
+                    <div class="imgwn"><img src="images/effective-1.png" alt=""></div>
+                    <div class="imgtxt"><h3> Una compressa al giorno</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 text-center">
+                    <div class="imgwn"><img src="images/effective-3.png" alt=""></div>
+                    <div class="imgtxt"><h3>Il corso raccomandato<br>è di 30 giorni</h3></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="certificato">
+    <div class="container"><h2 class="text-center">Attenzione ai falsi!</h2>
+        <div class="row">
+            <div class="col-12 col-sm-6 text-center">
+                <img src="images/eleganza-prokla-2.png" alt="">
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="text"><p>Con la popolarità ottenuta da MET FORM nel
+                    mercato europeo, sono aumentati
+                    i casi di falsificazione, prodotti offerti a prezzi
+                    bassi e di scarsa qualità. MET FORM
+                    originale (con fito irisina) è disponibile
+                    solo sul nostro sito web. Non
+                    risparmiare sulla tua salute - ordina il
+                    prodotto certificato MET FORM dal
+                    fornitore ufficiale!</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cheerlead">
+    <div class="container-fluid fruits-8"></div>
+    <div class="container text-center">
+        <h1>25 capsula - e i risultati<br>
+            noteranno tutti!</h1>
+        <p class="puede">Ora puoi:</p>
+        <div class="row">
+            <div class="offset-5 col-7 bullet">
+                <div class="product__list-item text-left"><h3>Indossare gli abiti di<br>2-3 taglie in meno</h3></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-5 col-7 bullet">
+                <div class="product__list-item text-left"><h3>Ottenere più attenzione<br>e complimenti</h3></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-5 col-7 bullet">
+                <div class="product__list-item text-left"><h3>Fare le cose che prima<br>stavi sognando!</h3></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="order-3">
+    <div class="container-fluid fruits-9"></div>
+    <div class="container-fluid">
+        <h2 class="text-center">Non devi pensare! Ordina<br class="hidden-sm"> MET FORM e ottieni uno<br class="hidden-sm"> sconto del 50%!</h2>
+    </div>
+    <div class="container-fluid oferta">
+        <div class="container text-center">Solo oggi con lo sconto!
+            <div class="persent"></div>
+        </div>
+    </div>
+    <div class="container text-center"><a name="forma" id="forma" class="forma"></a>
+        <span class="pnorm">Prezzo standard: <s class="oldPriceAndLabelForLandingInfoApi"><x-oldprice>78</x-oldprice> <x-currency>€</x-currency></s></span>
+        <span class="pofertado">Prezzo scontato: <b class="priceAndLabelForLandingInfoApi"><x-newprice>39</x-newprice> <x-currency>€</x-currency></b></span>
+        <form class="myform  orderForm" id="order_form" method="post" action="https://healthbestblog.space/cpatl/api.php">
+                
+    <select name="offer" class="form-control country_chang" style="display: none;">
+        <option data-country-code="IT" selected="selected" value="19277">
+            Италия        </option>
+    </select>
+
+                <input name="name" type="text" class="input-3" required placeholder="Inserisci il tuo nome">
+            <input id="phone" name="phone" required type="tel" class="input-3" placeholder="Inserisci il tuo telefono">
+            <input class="button" type="submit" value="Ordinare MET FORM">
+               <input type="hidden" name="stream_hid" value="pNKT64mG">
+      <input type="hidden" name="offer_id" value="4725">
+
+      
+      <input type="hidden" name="country" value="IT"> 
+
+      <input type="hidden" name="sid1" value="alex">
+      <input type="hidden" name="sid2" value="alex2">
+      <input type="hidden" name="sid3" value="alex3">
+      <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+        </form>
+        <p class="anon">Pagamento dell'ordine solo alla<br>consegna della merce</p>
+
+    </div>
+</section>
+
+
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<footer>
+    <div class="container text-center">
+     </div>
+</footer>
+
+<span style="text-align: center;    display: block; margin-top: 10px;">
+<p>OOO "OSTROV PRODAZH" OGRN: 1197746695530 VAT: 7708365555</p>
+<p>129090, Moscow, pereulok Zhivarev, house 8, stroenie 3, flat 16 email: ostrov.prodazh@mail.com Skype: ostrov.prodazh@mail.com</p> 
+
+
+    
+            <p class="conf-link doclinks">
+        <a class="nav-link" href="" onclick="window.open('/policy_en.php'); return false;">Privacy Policy</a>
+          |
+        <a class="nav-link" href="" onclick="window.open('/terms_en.php'); return false;">Terms & Conditions</a>
+      </p>
+      
+    
+ </span>
+   <!-- INTH_SNIPPET_BOTTOM -->
+</body>
+</html>
